@@ -19,6 +19,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.tutorials = require("./hose.model.js")(sequelize, Sequelize);
+db.property = require("./property.model.js")(sequelize, Sequelize);
 
 module.exports = db;
