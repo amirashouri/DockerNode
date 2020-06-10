@@ -1,5 +1,5 @@
 const db = require("../models");
-const Property = db.property;
+const User = db.user;
 const Op = db.Sequelize.Op;
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
@@ -30,7 +30,7 @@ exports.create = (req, res) => {
   };
 
   // Save User in the database
-  Property.create(user)
+  User.create(user)
     .then(data => {
       res.send(data);
     })
