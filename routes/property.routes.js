@@ -1,5 +1,5 @@
 module.exports = app => {
-    const propert = require("../controllers/propert.controller.js");
+    const propert = require("../controllers/property.controller.js");
   
     var router = require("express").Router();
   

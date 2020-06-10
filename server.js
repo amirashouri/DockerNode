@@ -13,8 +13,6 @@ const HOST = "https://amirreza-docker-node.herokuapp.com" || "127.0.0.1";
 // App
 const app = express();
 
-require("./app/routes/property.routes")(app);
-
 const db = require("./app/models");
 db.sequelize.sync();
 
@@ -64,6 +62,8 @@ function isAuthorized(req, res, next) {
     res.status(500).json({ error: "Not Authorized" });
   }
 }
+
+require("./app/routes/property.routes")(app);
 
 app.listen(PORT, function() {
   console.log('Chat server running');
