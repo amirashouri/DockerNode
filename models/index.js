@@ -21,6 +21,5 @@ db.sequelize = sequelize;
 
 db.property = require("./property.model.js")(sequelize, Sequelize);
 db.user = require("./user.model.js")(sequelize, Sequelize);
-require("../migrations/user.migration")(sequelize, Sequelize);
 
 module.exports = db;
