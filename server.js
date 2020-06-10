@@ -64,6 +64,7 @@ function isAuthorized(req, res, next) {
 }
 
 require("./routes/property.routes")(app);
+require("./routes/user.routes")(app);
 
 app.listen(PORT, function() {
   console.log('Chat server running');
