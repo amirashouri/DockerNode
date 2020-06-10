@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 
 // Constants
 const PORT = process.env.PORT || 8080;
-const HOST = "https://amirreza-docker-node.herokuapp.com";
+const HOST = "amirreza-docker-node.herokuapp.com";
 
 // App
 const app = express();
