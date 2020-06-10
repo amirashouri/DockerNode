@@ -19,8 +19,8 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING,
         required: true,
         allowNull: false,
-        primaryKey: true,
-        unique: true
+        unique: true,
+        primaryKey: true
       },
       age: {
         type: Sequelize.STRING,
