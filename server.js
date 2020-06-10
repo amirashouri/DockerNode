@@ -13,7 +13,7 @@ const HOST = "https://amirreza-docker-node.herokuapp.com" || "127.0.0.1";
 // App
 const app = express();
 
-const db = require("./app/models");
+const db = require("./models");
 db.sequelize.sync();
 
 app.use(bodyParser.json());
