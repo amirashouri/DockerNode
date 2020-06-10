@@ -16,7 +16,9 @@ exports.create = (req, res) => {
   const property = {
     title: req.body.title,
     description: req.body.description,
-    published: req.body.published ? req.body.published : false
+    published: req.body.published ? req.body.published : false,
+    address: req.body.address,
+    area: req.body.area
   };
 
   // Save Property in the database

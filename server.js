@@ -1,5 +1,5 @@
 "use strict";
-require("./app/routes/turorial.routes")(app);
+require("./app/routes/property.routes")(app);
 const express = require("express");
 const bodyParser = require("body-parser");
 //const cors = require("cors");
