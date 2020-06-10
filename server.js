@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 
 // Constants
 const PORT = process.env.PORT || 8080;
-const HOST = process.env.IP || "127.0.0.1";
+const HOST = "https://amirreza-docker-node.herokuapp.com" || "127.0.0.1";
 
 // App
 const app = express();
@@ -55,5 +55,7 @@ function isAuthorized(req, res, next) {
   }
 }
 
-app.listen(PORT, HOST);
+app.listen(PORT, function() {
+  console.log('Chat server running');
+});
 console.log(`Running on http://${HOST}:${PORT}`);
