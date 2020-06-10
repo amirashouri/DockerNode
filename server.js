@@ -1,6 +1,8 @@
 "use strict";
-
+require("./app/routes/turorial.routes")(app);
 const express = require("express");
+const bodyParser = require("body-parser");
+//const cors = require("cors");
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
 
@@ -10,6 +12,12 @@ const HOST = "https://amirreza-docker-node.herokuapp.com" || "127.0.0.1";
 
 // App
 const app = express();
+
+const db = require("./app/models");
+db.sequelize.sync();
+
+app.use(bodyParser.json());
+
 app.get("/", (req, res) => {
   res.send({
     message: {
