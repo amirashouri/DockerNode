@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 
 // Constants
 const PORT = process.env.PORT || 8080;
-const HOST = process.env.IP || "127.0.0.1";
+const HOST = process.env.IP || "64.74.162.69";
 
 // App
 const app = express();
