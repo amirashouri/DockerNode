@@ -1,5 +1,5 @@
 "use strict";
-require("./app/routes/property.routes")(app);
+
 const express = require("express");
 const bodyParser = require("body-parser");
 //const cors = require("cors");
@@ -12,6 +12,8 @@ const HOST = "https://amirreza-docker-node.herokuapp.com" || "127.0.0.1";
 
 // App
 const app = express();
+
+require("./app/routes/property.routes")(app);
 
 const db = require("./app/models");
 db.sequelize.sync();
