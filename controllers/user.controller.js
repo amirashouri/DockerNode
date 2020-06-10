@@ -1,0 +1,43 @@
+const db = require("../models");
+const Property = db.property;
+const Op = db.Sequelize.Op;
+const fs = require("fs");
+const jwt = require("jsonwebtoken");
+
+// Create and Save a new Property
+exports.create = (req, res) => {
+  // Validate request
+  if (!req.body.first_name) {
+    res.status(400).send({
+      message: "Content can not be empty!"
+    });
+    return;
+  }
+
+  let privateKey = fs.readFileSync("./private.pem", "utf8");
+  let token = jwt.sign({ body: "stuff" }, privateKey, { algorithm: "HS256" });
+
+  // Create a Property
+  const user = {
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    is_active: req.body.is_active ? req.body.is_active : true,
+    token: token,
+    phone_number: req.body.phone_number,
+    age: req.body.age,
+    email: req.body.email,
+    password: req.body.password
+  };
+
+  // Save User in the database
+  Property.create(user)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while creating the User."
+      });
+    });
+};
