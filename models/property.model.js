@@ -17,10 +17,10 @@ module.exports = (sequelize, Sequelize) => {
         required: true
       },
       area: {
-        type: sequelize.STRING,
+        type: Sequelize.STRING,
         required: true
       }
     });
   
-    return Tutorial;
+    return Property;
   };
