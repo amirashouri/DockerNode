@@ -24,5 +24,5 @@ module.exports = app => {
     // Create a new propert
     router.delete("/", propert.deleteAll);
   
-    app.use('/api/propert', router);
+    app.use('/api/property', router);
   };
