@@ -18,7 +18,9 @@ module.exports = (sequelize, Sequelize) => {
       phone_number: {
         type: Sequelize.STRING,
         required: true,
-        allowNull: false
+        allowNull: false,
+        primaryKey: true,
+        unique: true
       },
       age: {
         type: Sequelize.STRING,

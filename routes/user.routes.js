@@ -12,8 +12,8 @@ module.exports = app => {
     // Retrieve all published propert
     //router.get("/published", user.findAllPublished);
   
-    // Retrieve a single propert with id
-    //router.get("/:id", user.findOne);
+    // Retrieve a single propert with phone_number
+    router.get("/:phone_number", user.findOne);
   
     // Update a propert with id
     //router.put("/:id", user.update);

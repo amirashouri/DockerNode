@@ -41,3 +41,18 @@ exports.create = (req, res) => {
       });
     });
 };
+
+exports.findOne = (req, res) => {
+    const phoneNumber = req.params.phone_number;
+
+    User.findByPk(phoneNumber)
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message: "Error retrieving User with phobe number: " + phoneNumber,
+          error: err.toString()
+        });
+      });
+}
