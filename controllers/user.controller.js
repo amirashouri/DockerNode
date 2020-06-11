@@ -45,7 +45,7 @@ exports.create = (req, res) => {
 exports.findOne = (req, res) => {
     const phoneNumber = req.params.phone_number;
 
-    User.findByPk(phoneNumber)
+    User.findAll({ where: { phone_number: phoneNumber } })
       .then(data => {
         res.send(data);
       })
@@ -56,3 +56,19 @@ exports.findOne = (req, res) => {
         });
       });
 }
+
+exports.findAll = (req, res) => {
+    const userName = req.query.user_name;
+    var condition = userName ? { user_name: { [Op.iLike]: `%${userName}%` } } : null;
+  
+    User.findAll({ where: condition })
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while retrieving User."
+        });
+      });
+};
